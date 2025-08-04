@@ -44,11 +44,12 @@ body {
 }
 
 .profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid var(--plp-secondary);
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    display: block; /* Ensures image renders */
+    margin: 0 auto; /* Centers image */
 }
 
 .tagline {
