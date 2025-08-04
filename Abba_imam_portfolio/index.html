@@ -218,5 +218,28 @@
             this.reset();
         });
     </script>
+    <script>
+    // Fix smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    </script>
+    <!-- Temporary debug code - place before </body> -->
+<script>
+    console.log('Profile image exists?', 
+        fetch('assets/profile.jpg').then(res => res.ok).catch(() => false));
+    console.log('CV exists?', 
+        fetch('assets/cv.pdf').then(res => res.ok).catch(() => false));
+</script>
 </body>
 </html>
